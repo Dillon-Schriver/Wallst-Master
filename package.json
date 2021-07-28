@@ -1,0 +1,49 @@
+{
+  "name": "wallst-master",
+  "version": "1.0.0",
+  "description": "Web platform for practicing financial services interview questions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "webpack -w",
+    "dev": "webpack serve --open & npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "\"practice",
+    "web",
+    "platform\"",
+    "\"financial",
+    "services\"",
+    "\"education\""
+  ],
+  "author": "Dillon Schriver",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "css-loader": "^6.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "node": "^16.5.0",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.36.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "nodemon": "^2.0.12",
+    "webpack": "^5.47.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
