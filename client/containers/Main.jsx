@@ -14,6 +14,7 @@ import {
   } from "react-router-dom";
 import Home from './Home.jsx';
 import Signup from './Signup.jsx';
+import ProblemsOverview from './ProblemOverview.jsx';
 import styles from '../scss/application.scss'
 
 //TODO - future component imports here
@@ -37,7 +38,7 @@ const Main = props => (
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/problems">Problems</Link>
+              <Link to="/problems_index">Problems</Link>
             </li>
             <li>
               <Link to="/signup">Sign Up Now!</Link>
@@ -55,6 +56,11 @@ const Main = props => (
             exact
             path="/signup"
             component={Signup}
+          />
+          <Route
+            exact
+            path="/problems_index"
+            component={ProblemsOverview}
           />
         </Switch>
         </div>

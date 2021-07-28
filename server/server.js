@@ -8,14 +8,18 @@ const PORT = 3000;
 
 // require routers section TODO
 const apiRouter = require('./routes/api.js');
+const userRouter = require('./routes/users.js');
 
 // handle requests for static files
 // app.use(express.static(path.resolve(__dirname, '../dist'))); 
+
 app.use(express.json());
 
 // define route handlers here
 // app.use('/api', apiRouter);
 
+// sign up / login post
+app.use('/users', userRouter);
 
 
 // catch-all route handler for anything unknown
