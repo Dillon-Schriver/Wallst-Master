@@ -27,9 +27,11 @@ export const login = (username, password) => (dispatch) => {
         res.json();
     })
     .then((res) => {
-        dispatch()
+        if (res.data.accessToken) {
+            localStorage.setItem('user', JSON.stringify(res.data));
+        }
         console.log("this is the data from login post", res);
-        dispatch( type: types.LOGIN_SUCCESS)
+        dispatch({ type: types.LOGIN_SUCCESS });
     })
     .catch(error => {
         console.log(error);
@@ -44,7 +46,7 @@ export const register = (username, password) => (dispatch) => {
         password: this.password
     };
 
-    fetch('http://localhost:3000/users/create', {
+    fetch('http://localhost:3000/users/create/', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -59,7 +61,7 @@ export const register = (username, password) => (dispatch) => {
     .then((res) => {
         dispatch()
         console.log("this is the data from login post", res);
-        dispatch({ type: types.REGISTER_SUCCESS })
+        dispatch({ type: types.REGISTER_SUCCESS });
     })
     .catch(error => {
         console.log(error);

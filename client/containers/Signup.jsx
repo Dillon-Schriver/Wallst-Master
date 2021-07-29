@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { render } from 'react-dom';
 import axios from 'axios';
+// import { useDispatch, useSelector } from 'react-redux';
+
+//import our action to fire the post request
+// import * as auth_actions from '../actions/auth_actions.js';
 
 class Signup extends Component  {
     constructor(props){
@@ -10,18 +14,31 @@ class Signup extends Component  {
             username: 'Dill',
             password: 'Scout'
         };
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onSubmitRegister = this.onSubmitRegister.bind(this);
         this.onChangeUserName= this.onChangeUserName.bind(this);
-        this.onChangeUserPW= this.onChangeUserPW.bind(this);
+        this.onChangeUserPW = this.onChangeUserPW.bind(this);
     }
 
-    onSubmit(e){
-        e.preventDefault();
+    // dispatch = useDispatch(); this can only be used in functional components
+    // mapDispatchToProps = (dispatch) => {
+    //     return {
+    //         register,
+    //     }
+    // };
 
-        const userForm = {
-            username: this.state.username,
-            password: this.state.password
-        };
+    // mapStateToProps = state =>{
+    //     isLoggedIn: state.isLoggedIn,
+    // }
+
+    onSubmitRegister(e){
+        e.preventDefault();
+        console.log("now activing onSubmitRegister");
+        console.log("this.state", this.state);
+        dispatch(register(this.state.username, this.state.password))
+        .then(() => {
+            console.log("logged in");
+        })
+        .catch((error) => console.log(error));
 
         this.setState({ username: '', password: '' });
     }
@@ -38,15 +55,16 @@ class Signup extends Component  {
     render() {
         return(
         <div className="content">
-            <p>Signup Below</p>
+            <h1>Are you currently logged in?</h1> 
             <form method='POST' action='/signup'>
             <input name="username" type="text" value={this.state.username} onChange={this.onChangeUserName}></input>
             <input name="password" type="password" value={this.state.password} onChange={this.onChangeUserPW}></input>
-            <input type='submit' value='Create User' onClick={this.onSubmit}></input>
+            <input type='submit' value='Create User' onClick={this.onSubmitRegister}></input>
             </form>
         </div>
     );
     }
 };
-
+//connect returns a function which takes our component as an argument and maps the props to state and dispatch from store respectively
+// export default connect(mapStateToProps, mapDispatchToProps)(Signup); 
 export default Signup;
