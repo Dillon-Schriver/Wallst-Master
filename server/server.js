@@ -1,19 +1,20 @@
 const path = require('path');
 const express = require('express');
-
 const app = express();
 const PORT = 3000;
-
+const cors = require('cors');
 
 
 // require routers section TODO
 const apiRouter = require('./routes/api.js');
 const userRouter = require('./routes/users.js');
+const bodyParser = require('body-parser');
 
 // handle requests for static files
 // app.use(express.static(path.resolve(__dirname, '../dist'))); 
 
 app.use(express.json());
+app.use(cors());
 
 // define route handlers here
 // app.use('/api', apiRouter);

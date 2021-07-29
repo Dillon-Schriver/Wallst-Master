@@ -12,10 +12,18 @@ import {
     Route,
     Link
   } from "react-router-dom";
+
+//React component imports for routes
 import Home from './Home.jsx';
 import Signup from './Signup.jsx';
 import ProblemsOverview from './ProblemOverview.jsx';
+import About from '../components/About.jsx';
+
+//style import
 import styles from '../scss/application.scss'
+
+//image imports
+import logoimg from '../assets/bear vs. bull orange.jpg';
 
 //TODO - future component imports here
 
@@ -26,11 +34,11 @@ import styles from '../scss/application.scss'
 // Main container - TODO formatting and add reac tomponents in h1
 const Main = props => (
     <Router>
-        <div className='topcontainer'>Beat the Street - Construction in progress!</div>
-        <div>
         <nav className="topnav">
+            <div>
+            <img className='img' src={logoimg}></img> 
+            </div> 
           <ul>
-          <li className='logo'>Logo here </li>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -41,7 +49,7 @@ const Main = props => (
               <Link to="/problems_index">Problems</Link>
             </li>
             <li>
-              <Link to="/signup">Sign Up Now!</Link>
+              <Link to="/signup">Login</Link>
             </li>
             <li>Insert Current User </li>
           </ul>
@@ -62,8 +70,12 @@ const Main = props => (
             path="/problems_index"
             component={ProblemsOverview}
           />
+          <Route
+            exact
+            path="/about"
+            component={About}
+          />
         </Switch>
-        </div>
     </Router>
   );
 

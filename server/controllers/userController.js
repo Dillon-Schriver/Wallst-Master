@@ -25,13 +25,13 @@ userController.createUser = async (req, res, next) => {
   // write code here
   try {
     const { username, password } = req.body;
+    console.log("recieved post - ", req.body);
     await User.create({ username: username, password: password }, (err, val) => {
       
       if (err){
         return next(err);
       } else {
         // we want to push to MongoDB in this step
-        res.redirect('/secret'); // optional status
         return next()
       }
     });
@@ -51,8 +51,8 @@ userController.verifyUser = async (req, res, next) => {
   const { username, password } = req.body;
   console.log(username, password);
   await User.count({ username: username, password: password}, (err, count) =>{
-    if (err || count < 1) res.redirect('/signup');
-    else return next();
+    // if (err || count < 1) //TODO WHAT HERE?
+    // else return next();
   });
 
 }

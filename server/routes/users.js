@@ -9,7 +9,7 @@ router.post('/create',
     userController.createUser,
     (req, res) => {
         console.log("In the create user router!");
-        return res.status(200).json({});
+        res.status(200).json({});
 });
 
 module.exports = router;

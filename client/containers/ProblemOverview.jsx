@@ -4,7 +4,7 @@ import Card from '../components/ProblemCard.jsx'
 
 const ProblemsOverview = props => {
     return (
-    <div className="container">
+    <div className="content">
         <h1 id="header">Practice proven interview questions and master your technical skills</h1>
       <main>
         <Card key={0}/>

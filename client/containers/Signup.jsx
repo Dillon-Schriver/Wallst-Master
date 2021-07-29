@@ -11,36 +11,39 @@ class Signup extends Component  {
             password: 'Scout'
         };
         this.onSubmit = this.onSubmit.bind(this);
+        this.onChangeUserName= this.onChangeUserName.bind(this);
+        this.onChangeUserPW= this.onChangeUserPW.bind(this);
     }
 
     onSubmit(e){
+        e.preventDefault();
+
         const userForm = {
             username: this.state.username,
             password: this.state.password
         };
 
-        axios.post('http://localhost:3000/users/create', userForm)
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        this.setState({ username: '', password: '' });
+    }
 
-        this.setState({ username: 'empty user', password: 'empty pw' });
+    onChangeUserName (e) {
+        console.log(e.target.value);
+        this.setState({ username: e.target.value });
+    }
+
+    onChangeUserPW = e => {
+        this.setState( { password: e.target.value })
     }
 
     render() {
         return(
-        <div className="container">
-            <body>
-            Signup Below
+        <div className="content">
+            <p>Signup Below</p>
             <form method='POST' action='/signup'>
-            <input name="username" type="text" value={this.state.username}></input>
-            <input name="password" type="password" value={this.state.password}></input>
+            <input name="username" type="text" value={this.state.username} onChange={this.onChangeUserName}></input>
+            <input name="password" type="password" value={this.state.password} onChange={this.onChangeUserPW}></input>
             <input type='submit' value='Create User' onClick={this.onSubmit}></input>
             </form>
-            </body>
         </div>
     );
     }

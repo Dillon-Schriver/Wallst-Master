@@ -2,25 +2,39 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color:  lightgreen;
+    background-color:  #021f3a;
     overflow: hidden;
+    height: 100px;
+    margin-bottom: 0!important;
   }
 
+.ul.nav { margin-bottom: 0 !important; }
+
 .topnav li {
+    font-family: sans-serif;
     list-style-type: none; 
     float: left;
     color: #f3ecec;
     text-align: center;
-    padding: 8px 80px;
+    padding: 25px 50px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
+    margin-bottom: 0!important;
+  }
+
+  .topnav li a {
+    font-family: sans-serif;
+    list-style-type: none; 
+    float: left;
+    color: #f3ecec;
   }
 
 .logo {
   align-self: left;
+  color: orange;
 }
 
 .topnav li:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #1a6acb;
+    color: white;
   }

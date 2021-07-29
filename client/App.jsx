@@ -8,7 +8,7 @@ import React from 'react';
 import Outter from './containers/Main.jsx';
 
 const App = () => (
-  <div id="app">
+  <div id="app" className='topcontainer'>
     <Outter />
   </div>
 );
