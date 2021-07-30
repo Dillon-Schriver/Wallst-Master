@@ -12,9 +12,11 @@ const bodyParser = require('body-parser');
 
 // handle requests for static files
 // app.use(express.static(path.resolve(__dirname, '../dist'))); 
-
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(cors());
+
 
 // define route handlers here
 // app.use('/api', apiRouter);

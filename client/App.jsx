@@ -9,7 +9,7 @@ import Outter from './containers/Main.jsx';
 
 const App = () => (
   <div id="app" className='topcontainer'>
-    <Outter />
+        <Outter />
   </div>
 );
 

@@ -18,6 +18,7 @@ import Home from './Home.jsx';
 import Signup from './Signup.jsx';
 import ProblemsOverview from './ProblemOverview.jsx';
 import About from '../components/About.jsx';
+import FullProblem from '../components/FullProblem.jsx';
 
 //style import
 import styles from '../scss/application.scss'
@@ -51,7 +52,7 @@ const Main = props => (
             <li>
               <Link to="/signup">Login</Link>
             </li>
-            <li>Insert Current User </li>
+            <li> [current user] </li>
           </ul>
         </nav>
       <Switch>
@@ -65,6 +66,11 @@ const Main = props => (
             path="/signup"
             component={Signup}
           />
+            <Route
+            exact
+            path="/fullproblem1"
+            component={FullProblem}
+          />
           <Route
             exact
             path="/problems_index"
@@ -75,6 +81,7 @@ const Main = props => (
             path="/about"
             component={About}
           />
+
         </Switch>
     </Router>
   );

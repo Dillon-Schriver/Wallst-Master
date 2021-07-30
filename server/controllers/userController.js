@@ -49,10 +49,13 @@ userController.createUser = async (req, res, next) => {
 userController.verifyUser = async (req, res, next) => {
   // write code here
   const { username, password } = req.body;
+  console.log('Now verifying user');
   console.log(username, password);
   await User.count({ username: username, password: password}, (err, count) =>{
-    // if (err || count < 1) //TODO WHAT HERE?
-    // else return next();
+    if (err || count < 1) res.locals.login = 'fail';
+    else res.locals.login = 'success';
+    console.log('res.locals.login', res.locals.login);
+    return next();
   });
 
 }

@@ -16,6 +16,8 @@ import store from './store';
 import styles from './scss/application.scss'
 
 // now render top level component and react will handle below
+
+// COMMENT / UNCOMMENT PROVIDER for REDUX
 render (
     // <Provider store={store}>
         <App />,

@@ -11,5 +11,11 @@ router.post('/create',
         console.log("In the create user router!");
         res.status(200).json({});
 });
+router.post('/login', 
+    userController.verifyUser,
+    (req, res) => {
+        console.log("In the create user router!");
+        return res.status(200).json(res.locals.login);
+});
 
 module.exports = router;

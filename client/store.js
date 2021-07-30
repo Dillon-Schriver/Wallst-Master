@@ -1,22 +1,23 @@
-/**
- *  Redux Store - central data repository for application
- * 
- */
+// /**
+//  *  Redux Store - central data repository for application
+//  * 
+//  */
 
 
 //  import { createStore, applyMiddleware } from 'redux';
 //  import { composeWithDevTools } from 'redux-devtools-extension';
 //  import thunk from 'redux-thunk';
-// // TODO - import reducers and actions respectively
-//  //  import reducers from './reducers/index';
-// //  import { loadMarkets } from './actions/actions';
+// // TODO - import reducers and any early actions respectively
+//   import reducers from './reducers/index';
+ 
  
 //  const store = createStore(
 //    reducers,
 //    composeWithDevTools(applyMiddleware(thunk)),
 //  );
  
-//  store.dispatch(loadMarkets());
+// // any initial dispatch?
+// //  store.dispatch();
  
 //  export default store;
  

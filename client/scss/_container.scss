@@ -4,6 +4,17 @@
     overflow: visible;
     font-family: sans-serif;
     max-height: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    padding:0px;
+    margin:0px;
+}
+main {
+    padding:0px;
+    margin:0px;
 }
 
 .content {
@@ -11,29 +22,48 @@
     align-items: center;
     margin: auto;
     background-color: #EDEFF2;
+    padding: 0px;
   }
+
+.content problemwrap {
+    background-color: white;
+    border-width: 2px;
+}
 
 .home-overview {
     background-color: #021f3a;
     font-family: sans-serif;
     text-align: center;
     overflow: auto;
-    color: white;
+    color: #EDEFF2;
     transition: 0.3s;
+    padding: 0px;
+    margin: 0px;
 }
 
 .container-img {
     position: relative;
     text-align: center;
-    color: white;
+    color: #EDEFF2;
+    padding: 0px;
+    margin: 0px;
 }
 /* generic container */
-  .container {
+.container {
     position: relative;
     text-align: center;
-    color: white;
+    color: #EDEFF2;
     height: 100%;
     width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.problem{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: stretch;
 }
 
 /* Centered text */
@@ -42,6 +72,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 0px;
+    margin: 0px;
+}
+
+.OverviewQ {
+    background-color: white;
+    align-self: center;
+    align-items: stretch;
+    padding: 0px;
+    margin: 0px;
+
 }
 
 .top-left {
@@ -78,6 +119,13 @@
     transition: 0.3s;
     width: 250px;
 }
+
+// .card a {
+//     font-family: sans-serif;
+//     list-style-type: none; 
+//     float: left;
+//     color: black;
+//   }
   
   /* On mouse-over, add a deeper shadow */
 .card:hover {
